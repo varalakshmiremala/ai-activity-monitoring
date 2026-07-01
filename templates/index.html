@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Activity Monitoring</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f4f6f9; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+        .container { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); text-align: center; max-width: 400px; width: 100%; }
+        h1 { color: #333; font-size: 24px; margin-bottom: 20px; }
+        .input-group { margin-bottom: 15px; text-align: left; }
+        .input-group label { display: block; font-weight: bold; margin-bottom: 5px; color: #555; }
+        .input-group input { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 6px; box-sizing: border-box; }
+        .btn-predict { background-color: #4CAF50; color: white; border: none; padding: 12px 30px; font-size: 16px; border-radius: 6px; cursor: pointer; width: 100%; font-weight: bold; margin-top: 10px; }
+        .btn-predict:hover { background-color: #45a049; }
+        .result-box { margin-top: 25px; padding: 15px; background-color: #e8f5e9; border-left: 5px solid #415a77; border-radius: 4px; text-align: left; }
+        .result-title { font-size: 14px; color: #666; margin: 0; text-transform: uppercase; }
+        .result-value { font-size: 20px; color: #1b4332; font-weight: bold; margin: 5px 0 0 0; }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>AI Activity Monitoring</h1>
+        
+        <form action="/predict" method="POST">
+            <!-- Input 1 -->
+            <div class="input-group">
+                <label>Sensor Value 1:</label>
+                <input type="number" step="any" name="input1" placeholder="Enter first value" required>
+            </div>
+            
+            <!-- Input 2 -->
+            <div class="input-group">
+                <label>Sensor Value 2:</label>
+                <input type="number" step="any" name="input2" placeholder="Enter second value" required>
+            </div>
+            
+            <!-- Input 3 -->
+            <div class="input-group">
+                <label>Sensor Value 3:</label>
+                <input type="number" step="any" name="input3" placeholder="Enter third value" required>
+            </div>
+
+            <button type="submit" class="btn-predict">Predict Activity</button>
+        </form>
+
+        <div class="result-box">
+            <p class="result-title">Current Status</p>
+            <p class="result-value">🏃 {{ prediction }}</p>
+        </div>
+    </div>
+
+</body>
+</html>
