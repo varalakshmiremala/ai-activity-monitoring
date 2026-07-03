@@ -1,6 +1,6 @@
-from flask import Flask, render_template, request
-import pickle
-import numpy as np
+import streamlit as st
+
+st.title("AI Activity Monitoring")
 
 app = Flask(__name__)
 
